@@ -28,7 +28,7 @@
       if(str in camelCaseCache) return camelCaseCache[str];
       
       if(str.indexOf("-") != -1) {
-        // Strongly inspired by Prototype's camelize function
+        /* Strongly inspired by Prototype's camelize function */
         var parts = str.split('-'), len = parts.length;
         if (len == 1) return parts[0];
 

@@ -1,3 +1,4 @@
-h1. lifedraft_style
+h1. jQuery plugin for dynamic manipulation of CSS Files and Style tags.
 
-jQuery plugin for dynamic manipulating CSS Files and Style tags.
+
+bq. Sorry documentation will follow. In the mean time please look at the test case in @test/index.html@
