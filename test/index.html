@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>test</title>
+  <style type="text/css" media="screen">
+    .button {
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      border: 1px solid #aaa;
+      padding: 4px 10px;
+      float: left;
+      margin-right: 10px;
+    }
+    
+    .button:hover {
+      background-color: #444;
+    }
+    
+    hr {
+      display: block;
+      clear: both;
+      border: none;
+      background: none;
+      margin: 15px 0;
+    }
+    
+    div div {
+      float: left;
+      width: 100px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      height: 100px;
+      background: #ddd;
+    }
+    
+    #test div.myClass {
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <a class="button" id="inlineStyle" href="#">inlineStyle way</a>
+  <a class="button" id="addClass" href="#">addClass way</a>
+  <a class="button" id="setStyle" href="#">setStyle way</a>
+  
+  <hr />
+  <div id="test">
+  </div>
+  
+  <script src="../lib/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../jquery.lifedraft_style.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    
+    jQuery(function() {
+      
+      var test = document.getElementById("test");
+      var elements = [];
+      for (var i=0; i < 100; i++) {
+        var element = document.createElement("div");
+        elements.push(element);
+        test.appendChild(element);
+      };
+      
+      // setStyle.getSelectorProperty("#test div", "backgroundColor", "testStyle");
+      
+      lifedraft_style.cacheStyleTag("testStyle");
+      // var screenId = lifedraft_style.createTag();
+      // var printId = lifedraft_style.createTag("print");
+      
+      // lifedraft_style.set("#test div", { "background-color" : "red" });
+      
+      /*
+      lifedraft_style.set("div div", {
+        "float": "right"
+      });
+      */
+      
+      /*lifedraft_style.set("#test div", {
+        "background-color" : "yellow",
+        "border": "1px dashed green"
+      });
+      
+      lifedraft_style.set("div div", {
+        "background-color" : "yellow",
+        "border": "1px dashed green"
+      });*/
+      
+            
+      var divs = jQuery("#test div").lifedraft_style_set({
+        "background-color" : "yellow",
+        "border": "1px dashed green"
+      });
+      
+      divs.lifedraft_style_get("background-color");
+      
+      /*
+      lifedraft_style.set("#test div", {
+        width: "20px",
+        height: "20px"
+      });
+      */
+      
+      // alert(lifedraft_style.toString());
+      
+      /*
+      jQuery("#inlineStyle").click(function() {
+        var length = elements.length;
+        console.time("inlineStyle");
+        
+        for (var i=0; i < length; i++) {
+          elements[i].style.background = "red";
+        };
+        
+        console.timeEnd("inlineStyle");
+        return false;
+      });
+      
+      jQuery("#addClass").click(function() {
+        var length = elements.length;
+        console.time("addClass");        
+        for (var i=0; i < length; i++) {
+          elements[i].className = "myClass";
+        };
+        console.timeEnd("addClass");
+        return false;
+      });
+      
+      jQuery("#setStyle").click(function() {
+        // console.time("setStyle");
+        
+        setStyle("#test div", {
+          background: "green"
+        });
+        // console.timeEnd("setStyle");
+                        
+        return false;
+      });
+      */
+      
+    });
+  </script>
+</body>
