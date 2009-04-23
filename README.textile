@@ -1,0 +1,3 @@
+h1. lifedraft_style
+
+jQuery plugin for dynamic manipulating CSS Files and Style tags.
