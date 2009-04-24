@@ -42,16 +42,13 @@
   </style>
 </head>
 <body>
-  <a class="button" id="inlineStyle" href="#">inlineStyle way</a>
-  <a class="button" id="addClass" href="#">addClass way</a>
-  <a class="button" id="setStyle" href="#">setStyle way</a>
   
   <hr />
   <div id="test">
   </div>
   
   <script src="../lib/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../jquery.lifedraft_style.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../lifedraft_style.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript" charset="utf-8">
     
     jQuery(function() {
@@ -94,7 +91,11 @@
         "border": "1px dashed green"
       });
       
-      divs.lifedraft_style_get("background-color");
+      jQuery("#test div:hover").lifedraft_style_set({
+        background: "red"
+      });
+      
+      // divs.lifedraft_style_get("background-color");
       
       /*
       lifedraft_style.set("#test div", {
